@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <!--Meta-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title-->
+    <title>Book Store</title>
+
+    {% apply spaceless %}
+        {% if not document is defined or not document %}
+            {% set document = pimcore_document(1) %}
+        {% endif %}
+
+        {% if document is instanceof('\\Pimcore\\Model\\Document\\Link') %}
+            {% set document = document.getElement() %}
+        {% endif %}
+
+        {% if document is instanceof('\\Pimcore\\Model\\Document\\Page') %}
+            {% if document.getTitle() is not empty %}
+                {% do pimcore_head_title().set(document.getTitle()) %}
+            {% endif %}
+
+            {% if document.getDescription() is not empty %}
+                {% do pimcore_head_meta().set(document.getDescription()) %}
+            {% endif %}
+
+            {% do pimcore_head_title().append('Book Store') %}
+            {% do pimcore_head_title().setSeparator(' : ') %}
+        {% endif %}
+    {% endapply %}
+
+    {% block layout_head_meta %}
+        {{ pimcore_head_title() }}
+        {{ pimcore_head_meta() }}
+
+        {% if pimcore_placeholder('canonical').count() %}
+            <link rel="canonical" href="{{ pimcore_placeholder('canonical') }}"/>
+        {% endif %}
+    {% endblock %}
+
+    {% block head_stylesheets %}
+        {{ pimcore_head_link() }}
+    {% endblock %}
+</head>
+<body>
+
+<!--Header Include-->
+{{ block('content') }}
+<!--Footer Include-->
+
+{% block headscripts %}
+    {{ pimcore_head_script() }}
+{% endblock %}
+
+{% block inlinescripts %}
+    {{ pimcore_inline_script() }}
+{% endblock %}
+
+</body>
+</html>
