@@ -4,10 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build app --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:app": "node dist/app/server/server.mjs",
+    "clean-css": "rm -f  /Users/Tadijaaa/tuki_project/DL-Project/public/static/css/*.css",
+    "clean-js": "rm -f  /Users/Tadijaaa/tuki_project/DL-Project/public/static/css/*.js",
+    "copy-css":"cp dist/app/browser/*.css /Users/Tadijaaa/tuki_project/DL-Project/public/static/css",
+    "copy-js":"cp dist/app/browser/*.js /Users/Tadijaaa/tuki_project/DL-Project/public/static/js",
+    "build-and-deploy": "npm run build && npm run clean-css && npm run clean-js && npm run copy-css && npm run copy-js",
     "run_app":"ng serve app"
   },
   "private": true,
