@@ -8,8 +8,14 @@
  * - localizedfields [localizedfields]
  * -- title [input]
  * -- description [wysiwyg]
+ * -- location [input]
+ * - price [numeric]
  * - image [hotspotimage]
  * - imageGallery [imageGallery]
+ * - rooms [manyToOneRelation]
+ * - baths [manyToOneRelation]
+ * - sqf [manyToOneRelation]
+ * - select [select]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -19,7 +25,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1730047940,
+   'modificationDate' => 1730313439,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -152,6 +158,36 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                      'height' => 400,
                      'width' => '',
                   )),
+                  2 => 
+                  \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                     'name' => 'location',
+                     'title' => 'Location',
+                     'tooltip' => '',
+                     'mandatory' => false,
+                     'noteditable' => false,
+                     'index' => false,
+                     'locked' => false,
+                     'style' => '',
+                     'permissions' => NULL,
+                     'fieldtype' => '',
+                     'relationType' => false,
+                     'invisible' => false,
+                     'visibleGridView' => false,
+                     'visibleSearch' => false,
+                     'blockedVarsForExport' => 
+                    array (
+                    ),
+                     'defaultValue' => NULL,
+                     'columnLength' => 190,
+                     'regex' => '',
+                     'regexFlags' => 
+                    array (
+                    ),
+                     'unique' => false,
+                     'showCharCount' => false,
+                     'width' => '',
+                     'defaultValueGenerator' => '',
+                  )),
                 ),
                  'region' => NULL,
                  'layout' => NULL,
@@ -170,6 +206,36 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'width' => '',
                  'height' => '',
                  'fieldDefinitionsCache' => NULL,
+              )),
+              1 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+                 'name' => 'price',
+                 'title' => 'Price',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'defaultValue' => NULL,
+                 'integer' => false,
+                 'unsigned' => false,
+                 'minValue' => NULL,
+                 'maxValue' => NULL,
+                 'unique' => false,
+                 'decimalSize' => NULL,
+                 'decimalPrecision' => NULL,
+                 'width' => '',
+                 'defaultValueGenerator' => '',
               )),
             ),
              'locked' => false,
@@ -246,6 +312,213 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'predefinedDataTemplates' => '',
                  'height' => '',
                  'width' => '',
+              )),
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'panel',
+             'layout' => NULL,
+             'border' => false,
+             'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+          )),
+          2 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+             'name' => 'Relations',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => 'Relations',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => '',
+             'datatype' => 'layout',
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'name' => 'rooms',
+                 'title' => 'Rooms',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                ),
+                 'displayMode' => 'grid',
+                 'pathFormatterClass' => '',
+                 'assetInlineDownloadAllowed' => false,
+                 'assetUploadPath' => '',
+                 'allowToClearRelation' => true,
+                 'objectsAllowed' => false,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'width' => '',
+              )),
+              1 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'name' => 'baths',
+                 'title' => 'Baths',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                ),
+                 'displayMode' => 'grid',
+                 'pathFormatterClass' => '',
+                 'assetInlineDownloadAllowed' => false,
+                 'assetUploadPath' => '',
+                 'allowToClearRelation' => true,
+                 'objectsAllowed' => false,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'width' => '',
+              )),
+              2 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+                 'name' => 'sqf',
+                 'title' => 'Sqf',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => true,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'classes' => 
+                array (
+                ),
+                 'displayMode' => 'grid',
+                 'pathFormatterClass' => '',
+                 'assetInlineDownloadAllowed' => false,
+                 'assetUploadPath' => '',
+                 'allowToClearRelation' => true,
+                 'objectsAllowed' => false,
+                 'assetsAllowed' => false,
+                 'assetTypes' => 
+                array (
+                ),
+                 'documentsAllowed' => false,
+                 'documentTypes' => 
+                array (
+                ),
+                 'width' => '',
+              )),
+            ),
+             'locked' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'fieldtype' => 'panel',
+             'layout' => NULL,
+             'border' => false,
+             'icon' => '',
+             'labelWidth' => 100,
+             'labelAlign' => 'left',
+          )),
+          3 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
+             'name' => 'Sale',
+             'type' => NULL,
+             'region' => NULL,
+             'title' => 'Sale',
+             'width' => '',
+             'height' => '',
+             'collapsible' => false,
+             'collapsed' => false,
+             'bodyStyle' => '',
+             'datatype' => 'layout',
+             'children' => 
+            array (
+              0 => 
+              \Pimcore\Model\DataObject\ClassDefinition\Data\Select::__set_state(array(
+                 'name' => 'select',
+                 'title' => 'Select',
+                 'tooltip' => '',
+                 'mandatory' => false,
+                 'noteditable' => false,
+                 'index' => false,
+                 'locked' => false,
+                 'style' => '',
+                 'permissions' => NULL,
+                 'fieldtype' => '',
+                 'relationType' => false,
+                 'invisible' => false,
+                 'visibleGridView' => false,
+                 'visibleSearch' => false,
+                 'blockedVarsForExport' => 
+                array (
+                ),
+                 'options' => 
+                array (
+                  0 => 
+                  array (
+                    'key' => 'Sale',
+                    'value' => 'Sale',
+                  ),
+                  1 => 
+                  array (
+                    'key' => 'Featured',
+                    'value' => 'Featured',
+                  ),
+                ),
+                 'defaultValue' => '',
+                 'columnLength' => 190,
+                 'dynamicOptions' => false,
+                 'defaultValueGenerator' => '',
+                 'width' => '',
+                 'optionsProviderType' => 'configure',
+                 'optionsProviderClass' => '',
+                 'optionsProviderData' => '',
               )),
             ),
              'locked' => false,

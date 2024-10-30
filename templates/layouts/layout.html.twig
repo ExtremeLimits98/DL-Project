@@ -11,6 +11,7 @@
         {% if not document is defined or not document %}
             {% set document = pimcore_document(1) %}
         {% endif %}
+        {% do pimcore_head_link().appendStylesheet(asset('static/css/styles-AVFEESUO.css')) %}
 
         {% if document is instanceof('\\Pimcore\\Model\\Document\\Link') %}
             {% set document = document.getElement() %}
