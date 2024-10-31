@@ -9,7 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:app": "node dist/app/server/server.mjs",
-    "rename-css": "cd dist/app/browser && mv old-style.css new-style.css && mv old-theme.css new-theme.css",
     "clean-css": "rm -f ../public/static/css/*.css",
     "clean-js": "rm -f ../public/static/js/*.js",
     "copy-css": "cp dist/app/browser/*.css ../public/static/css",
