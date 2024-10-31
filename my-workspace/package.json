@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build app --configuration production",
+    "build": "ng build app && node rename-files.ts",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:app": "node dist/app/server/server.mjs",
