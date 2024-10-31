@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build app && node rename-files.ts",
+    "clean": "rimraf dist",
+    "build": "npm run clean && ng build app && node rename-files.ts --watch",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:app": "node dist/app/server/server.mjs",
